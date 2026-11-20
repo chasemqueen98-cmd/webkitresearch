@@ -1,1 +1,210 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PS5 WebKit Research Lab 14.23</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080c16;
+    color: #e7efff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 25px;
+    background: #101b30;
+    border-bottom: 2px solid #168cff;
+}
+
+header h1 {
+    color: #45a5ff;
+    margin: 0;
+}
+
+header p {
+    color: #91a5c5;
+    font-size: 13px;
+}
+
+nav {
+    padding: 16px;
+    background: #0c1425;
+    border-bottom: 1px solid #263a59;
+}
+
+nav a {
+    color: #58adff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.panel {
+    background: #111d32;
+    border: 1px solid #263e60;
+    border-radius: 9px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #55aaff;
+}
+
+button {
+    background: #0879dc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.result {
+    background: #080f1d;
+    padding: 12px;
+    margin-top: 12px;
+    color: #57e6a3;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    color: #7185a4;
+    padding: 25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>PS5 WebKit Research Lab</h1>
+    <p>Firmware Research Profile: 14.23</p>
+    <p>Independent Homebrew Research Dashboard</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#webkit">WebKit</a>
+    <a href="#javascript">JavaScript</a>
+    <a href="#simulation">Simulation</a>
+    <a href="#pkg">PKG Research</a>
+</nav>
+
+<main>
+
+<section class="panel" id="dashboard">
+    <h2>Research Dashboard</h2>
+    <p>Welcome to your PS5 research environment.</p>
+    <p>Website status: ONLINE</p>
+    <p>Research profile: Firmware 14.23</p>
+</section>
+
+<section class="panel" id="webkit">
+    <h2>WebKit Compatibility</h2>
+    <p>Check basic browser capabilities.</p>
+    <button onclick="testWebKit()">Run WebKit Test</button>
+    <div class="result" id="webkitResult">
+        Waiting for test...
+    </div>
+</section>
+
+<section class="panel" id="javascript">
+    <h2>JavaScript Testing</h2>
+    <p>Test basic JavaScript functionality.</p>
+    <button onclick="testJavaScript()">Run JavaScript Test</button>
+    <div class="result" id="jsResult">
+        Waiting for test...
+    </div>
+</section>
+
+<section class="panel" id="simulation">
+    <h2>Safe Exploit Simulation</h2>
+    <p>Fictional research workflow. No console exploitation or payload execution.</p>
+    <button onclick="runSimulation()">Start Simulation</button>
+    <div class="result" id="simulationResult">
+        Simulation waiting...
+    </div>
+</section>
+
+<section class="panel" id="pkg">
+    <h2>PKG Metadata Research</h2>
+    <p>Research package documentation and metadata.</p>
+    <ul>
+        <li>Package Title</li>
+        <li>Content ID</li>
+        <li>Application Version</li>
+        <li>Required System Version</li>
+        <li>Package Size</li>
+        <li>Region Information</li>
+    </ul>
+    <p>Research status: Documentation only.</p>
+</section>
+
+</main>
+
+<footer>
+    PS5 WebKit Research Lab | Educational Project
+</footer>
+
+<script>
+
+function testWebKit() {
+    var output = [];
+
+    output.push("Browser: " + navigator.userAgent);
+    output.push("DOM: " + typeof document.querySelector);
+    output.push("JavaScript: " + typeof window.eval);
+    output.push("Canvas: " +
+        typeof document.createElement("canvas").getContext);
+
+    document.getElementById("webkitResult").innerHTML =
+        output.join("<br>");
+}
+
+function testJavaScript() {
+    var passed = 0;
+
+    if (10 + 20 === 30) passed++;
+    if ([1, 2, 3].length === 3) passed++;
+    if ({name: "PS5"}.name === "PS5") passed++;
+
+    document.getElementById("jsResult").textContent =
+        "Tests passed: " + passed + "/3";
+}
+
+function runSimulation() {
+    var output = [
+        "Starting safe simulation...",
+        "Environment check: PASS",
+        "Browser check: SIMULATED",
+        "Research workflow: SIMULATED",
+        "Simulation complete: PASS",
+        "No exploit or payload was executed."
+    ];
+
+    document.getElementById("simulationResult").innerHTML =
+        output.join("<br>");
+}
+
+</script>
+
+</body>
+</html>
+
